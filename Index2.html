@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Index.css">
+    <title>Website</title>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <img src="https://www.piugame.com/piu.xx/_img/piu_xx_logoM.png" class="logo" width="90" height="50"/>
+            <ul>
+                <li class="home"><a href="#home" class="active">Home</a></li>
+                <li class="search"><a href="../Assignment/profile.html">Our Profile</a></li>
+                <li class="logout"><a href="#achievement">Achievement</a></li>
+                <li class="logout"><a href="#message">Message Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section> 
+            <p style="font-size: 30px" class="main-margin">Hi <span id="name"></span>, Welcome To Pump It Up Community Website</p>
+            <script>
+                var name = prompt("Masukkan Nama Kamu");
+                var element = document.getElementById("name").innerText = name;
+            </script>
+            <p class="main-margin">Enjoy Your Time Here</p>
+        </section>
+        <div>
+            <img src="https://i.ytimg.com/vi/fHvUeuKc46E/maxresdefault.jpg" alt="piu" width="100%" height="auto">
+        </div>
+        <hr>
+        <div class="main-margin">
+            <h2>Top Songs</h2>
+        </div>
+        <section class="facilities">
+            <div><img src="https://i.ytimg.com/vi/DQZvySSvZLU/mqdefault.jpg" width="100px" height="auto" class="img-circle">
+                <p>Beethoven Virus</p>
+                </div>
+            <div><img src="https://i.ytimg.com/vi/M4pNa07-YMY/maxresdefault.jpg" class="img-circle">
+                <p>Bad Apple!</p>
+                </div>
+            <div><img src="https://i.ytimg.com/vi/VsDmaCxhZFU/maxresdefault.jpg" class="img-circle">
+                <p>Brain Power</p>
+                </div>
+            <div><img src="https://i.scdn.co/image/ab67616d0000b2736847aa7310791dcd66f16a5e" class="img-circle">
+                <p>Starry Night</p>
+                </div>
+            <div><img src="https://pumpout.anyhowstep.com//images/TitleCards/45.png" class="img-circle">
+                <p>Sorceress Elise</p>
+                </div>
+        </section>
+        <hr>
+        <div class="main-margin">
+        <h2 style="color: white;">Message Us</h2>
+        </div>
+        <div class="content">
+            <div>
+                <form action="" method="POST" onsubmit="return validateForm">
+                    <nav class="form">
+                        <div class="head">
+                            <div class="margin-form">Name</div>
+                            <div class="margin-form">Date of Birth</div>
+                            <div class="margin-form">Gender</div>
+                            <div class="margin-form">Message</div>
+                        </div>
+                        <div class="titik">
+                           <div class="margin-form">:</div>
+                           <div class="margin-form">:</div>
+                           <div class="margin-form">:</div>
+                           <div class="margin-form">:</div>
+                        </div>
+                        <div class="isi">
+                            <input type="text" placeholder="Nama" class="margin-form" name="full-name" required>
+                            <input type="date" class="margin-form" name="birth-date" required>
+                            <div class="margin-form">
+                                <input type="radio" name="gender" value="laki-laki" required>Male
+                                <input type="radio" name="gender" value="perempuan" required>Female
+                            </div>
+                            <textarea rows="4" cols="30" placeholder="Pesan" class="margin-form" name="messages" required></textarea>
+                        </div>
+                    </nav>
+                    <input class="tombol" type="submit" value="Submit">
+                </form>
+            </div>
+
+            <script>
+                function validateForm() {
+                    var name = document.forms["message-form"]["full-name"].value;
+                    var date = document.forms["message-form"]["birth-date"].value;
+                    var gender = document.forms["message-form"]["gender"].value;
+                    var messages = document.forms["message-form"]["message"].value;
+
+                    if (name == "" || date == "" || gender == "" || messages == "") {
+                        alert("Input tidak boleh kosong");
+                        return false;
+                    }
+                    document.getElementById("sender-full-name").innerText = name;
+                    document.getElementById("sender-birth-date").innerText = date;
+                    document.getElementById("sender-gender").innerText = gender;
+                    document.getElementById("sender-messages").innerText = messages;
+                    return false;
+                }
+            </script>
+        </div>
+        <hr>
+    </main>
+
+    <footer>
+        <p>Regina Pacis 2023</p>
+    </footer>
+</body>
+
+</html>
